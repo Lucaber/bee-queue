@@ -26,7 +26,9 @@ declare class BeeQueue<T> extends EventEmitter {
   on(ev: "job progress",  fn: (jobId: string, progress: number) => void): this;
 
   ready(): Promise<this>;
-  ready(cb: (err: Error | null) => void): this;
+  ready(cb?: (err: Error | null) => void): Promise<this>;
+
+  isRunning(): boolean;
 
   createJob(data: T): BeeQueue.Job<T>;
 
