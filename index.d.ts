@@ -77,7 +77,7 @@ declare namespace BeeQueue {
     removeOnFailure?: boolean,
     quitCommandClient?: boolean;
     redisScanCount?: number,
-    delayFailedJobsByWorker: number
+    delayFailedJobsByWorker?: number
   }
 
   interface Job<T> extends EventEmitter {
